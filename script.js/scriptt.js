@@ -19,4 +19,3 @@ const items = [
     },
 ]
 
-window.alert("hello world");
