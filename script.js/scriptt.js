@@ -19,3 +19,12 @@ const items = [
     },
 ]
 
+
+inicializarLoja = () => {
+    let containerProdutos = document.getElementById('produtos');
+    items.map((val)=>{
+        console.log(val.nome);
+    })
+}
+
+inicializarLoja();
