@@ -25,10 +25,10 @@ inicializarLoja = () => {
     items.map((val)=>{
         containerProdutos.innerHTML+= `
         
-        <div> class="produto-single">
+        <div class="produto-single">
 
-            <img src="`+val.img+`"/>
-            <p>` + val.nome+` </p>
+            <img src="`+val.img+`" />
+            <p>`+val.nome+` </p>
             <a  key="`+ val.id+`" href="">Adicionar ao carrinho</a>
 
         </div>
