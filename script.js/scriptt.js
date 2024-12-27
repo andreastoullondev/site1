@@ -29,7 +29,7 @@ inicializarLoja = () => {
 
             <img src="`+val.img+`" />
             <p>`+val.nome+` </p>
-            <a  key="`+val.id+`" href="">Adicionar ao carrinho</a>
+            <a  key="`+val.id+`" href="#">Adicionar ao carrinho</a>
 
         </div>
         
@@ -41,5 +41,17 @@ inicializarLoja = () => {
 inicializarLoja();
 
 const atualizarCarrinho = () =>{
-    
+    console.log(items);
+}
+
+
+let links = document.getElementsByTagName('a');
+
+for(let i = 0; i < links.length;i++){
+    links[i].addEventListener("click",function(){
+        let key = this.getAttribute('key')
+        items[key].quantidade++;
+        atualizarCarrinho();
+        return false;
+    })
 }
