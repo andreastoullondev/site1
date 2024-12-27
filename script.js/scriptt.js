@@ -29,7 +29,7 @@ inicializarLoja = () => {
 
             <img src="`+val.img+`" />
             <p>`+val.nome+` </p>
-            <a  key="`+ val.id+`" href="">Adicionar ao carrinho</a>
+            <a  key="`+val.id+`" href="">Adicionar ao carrinho</a>
 
         </div>
         
@@ -39,3 +39,7 @@ inicializarLoja = () => {
 }
 
 inicializarLoja();
+
+const atualizarCarrinho = () =>{
+    
+}
