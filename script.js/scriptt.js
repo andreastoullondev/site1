@@ -19,40 +19,26 @@ const items = [
     },
    
 ]
-
-
 inicializarLoja = () => {
     let containerProdutos = document.getElementById('produtos');
     items.map((val)=>{
         containerProdutos.innerHTML+= `
-        
         <div class="produto-single">
-
             <img src="`+val.img+`" />
             <p>`+val.nome+` </p>
             <a  key="`+val.id+`" href="#">Adicionar ao carrinho</a>
-
         </div>
-        
-        
         `;
     })
 }
-
 inicializarLoja();
-
 const atualizarCarrinho = () =>{
     console.log(items);
 }
-
-
 let links = document.getElementsByTagName('a');
-
- console.log('Numero de links',links.length);
- console.log('Numero de links',items.length);
-
+    console.log('Numero de links',links.length);
+    console.log('Numero de links',items.length);
 for(let i = 0; i < links.length;i++){
-
     console.log(' Links', i, 'key:',links[i].getAttribute('key'));
     links[i].addEventListener("click",function(){
         let key = this.getAttribute('key');
@@ -68,3 +54,22 @@ for(let i = 0; i < links.length;i++){
         return false;
     })
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const novaTag = document.createElement('p');
+    novaTag.textContent = '';
+    const header = document.querySelector('header');
+    header.appendChild(novaTag);
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const novaTag = document.createElement('p');
+    novaTag.textContent = '';
+    const estilos = {
+        width: '100%',
+        height: '200px' ,
+        backgroundColor: 'blue',
+       };
+    Object.assign(novaTag.style, estilos);
+    const header = document.querySelector('header');
+    header.appendChild(novaTag);
+});
+
