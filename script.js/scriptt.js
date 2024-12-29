@@ -6,17 +6,18 @@ const items = [
         quantidade:0 
     },
     {
-        id:2,
+        id:1,
         nome:'curso-back-end',
         img: 'css/img/image.jpg',
         quantidade:0 
     },
     {
-        id:3,
+        id:2,
         nome:'curso-informatica',
         img: 'css/img/image.jpg',
         quantidade:0 
     },
+   
 ]
 
 
@@ -47,9 +48,21 @@ const atualizarCarrinho = () =>{
 
 let links = document.getElementsByTagName('a');
 
+ console.log('Numero de links',links.length);
+ console.log('Numero de links',items.length);
+
 for(let i = 0; i < links.length;i++){
+
+    console.log(' Links', i, 'key:',links[i].getAttribute('key'));
     links[i].addEventListener("click",function(){
-        let key = this.getAttribute('key')
+        let key = this.getAttribute('key');
+        console.log('key no clique:', key);
+        key = parseInt(key);
+        if(key >= 0 && key < items.length){
+            items[key].quantidade++;
+        }else{
+            console.error('error:chave invalida',key);
+        }
         items[key].quantidade++;
         atualizarCarrinho();
         return false;
